@@ -51,10 +51,6 @@
 <style type="scss">
   section {
     padding-block: 0;
-
-    @include mq(medium) {
-      padding-block: 4rem;
-    }
   }
   article {
     margin-top: var(--space-6);

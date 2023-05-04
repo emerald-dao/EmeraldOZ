@@ -115,7 +115,7 @@
 	</div>
 	<div class="column-6 bottom-links-wrapper">
 		<EditContent
-			href={`https://github.com/emerald-dao/emerald-academy-v2/tree/main/src/lib/content/courses/${$page.params.name}/${$page.params.lang}/${$page.params.chapter}/${$page.params.lesson}.md`}
+			href={`https://github.com/emerald-dao/EmeraldOZ/tree/main/src/lib/content/${$page.params.name}.md`}
 			target="_blank"
 		/>
 	</div>

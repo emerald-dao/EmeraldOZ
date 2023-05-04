@@ -2,9 +2,8 @@ import { error } from '@sveltejs/kit';
 
 export const load = async ({ params }) => {
   try {
-    console.log(`../../lib/content/${params.page}.md`)
     const importedContent = await import(
-      `../../lib/content/${params.page}.md`
+      `../../lib/content/${params.name}.md`
     );
 
     const content = importedContent.default;

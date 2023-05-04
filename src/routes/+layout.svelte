@@ -6,9 +6,12 @@
 	import "@emerald-dao/component-library/styles/app.scss";
 	import "$lib/styles/_articles.scss";
 	import { theme } from "$stores/ThemeStore";
-	import { Header, Footer } from "@emerald-dao/component-library";
+	import { Header, Footer, Accordion } from "@emerald-dao/component-library";
 	import { page } from "$app/stores";
 	import { pageElements } from "$lib/nav";
+	import Icon from "@iconify/svelte";
+	import CourseTitlesHeader from "$lib/components/CourseTitlesHeader.svelte";
+	import CourseTitlesOpen from "$lib/components/CourseTitlesOpen.svelte";
 
 	let navElements = [
 		{
@@ -27,6 +30,12 @@
 			prefetch: true,
 		},
 	];
+
+	let open: boolean;
+
+	const handleClick = () => (open = !open);
+
+	$: $page.params && (open = false);
 </script>
 
 <Header
@@ -40,24 +49,43 @@
 <main>
 	<div class="container-large">
 		<div class="sidebar">
-			<a class="header-link" href="/">Home</a>
 			{#each pageElements as pageElement, index}
 				<div class="column-3">
-					<p class="chapter small">
-						{`${index + 1}. ${pageElement.name}`}
-					</p>
+					<a
+						href={`${pageElement.url}`}
+						class="header-link chapter"
+						class:active={pageElement.url === $page.url.pathname}
+					>
+						{pageElement.name}
+					</a>
 					{#if pageElement.options}
 						{#each pageElement.options as option, i}
 							<a
-								href={`/${pageElement.name}/${option.name}`}
-								class="header-link"
+								href={`${option.url}`}
+								class="header-link header-link-sub"
 								class:active={option.url === $page.url.pathname}
 							>
-								{`${index + 1}.${i + 1} ${option.name}`}
+								{option.name}
 							</a>
 						{/each}
 					{/if}
 				</div>
+			{/each}
+		</div>
+		<div class="accordion">
+			{#each pageElements as pageElement, i}
+				{#if pageElement.options}
+					<Accordion>
+						<div slot="header">
+							<CourseTitlesHeader data={pageElement} />
+						</div>
+						<div slot="open">
+							<CourseTitlesOpen data={pageElement} />
+						</div>
+					</Accordion>
+				{:else}
+					<CourseTitlesHeader data={pageElement} dropdown={false} />
+				{/if}
 			{/each}
 		</div>
 		<slot />
@@ -85,6 +113,12 @@
 		}
 	}
 
+	.align-center {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
+
 	.sidebar {
 		display: none;
 
@@ -95,7 +129,7 @@
 			border-right: 0.5px var(--clr-border-primary) solid;
 			border-bottom: none;
 			padding-right: var(--space-12);
-			gap: var(--space-11);
+			gap: var(--space-2);
 			overflow-y: auto;
 			position: sticky;
 			top: 0;
@@ -106,12 +140,17 @@
 
 		.header-link {
 			line-height: 1.4;
-			font-size: 0.83rem;
+			font-size: 1rem;
 			color: var(--clr-text-off);
 
 			&.active {
 				color: var(--clr-heading-main);
 			}
+		}
+
+		.header-link-sub {
+			font-size: 0.8rem;
+			margin-left: 10px;
 		}
 	}
 
