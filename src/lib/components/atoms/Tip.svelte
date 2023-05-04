@@ -30,4 +30,8 @@
     text-align: left;
     text-transform: uppercase;
   }
+
+  p {
+    margin: 0px;
+  }
 </style>

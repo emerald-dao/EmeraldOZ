@@ -1,41 +1,33 @@
-import Overview from "./pages/Overview.svelte";
 import type { Page } from "./types/page.interface";
 
 export const pageElements: Page[] = [
   {
     name: "Overview",
-    url: "/",
-    component: Overview
+    url: "/"
   },
   {
     name: "Wizard",
-    url: "/wizard",
-    component: Overview
+    url: "/wizard"
   },
   {
     name: "Extending Contracts",
-    url: "/extending-contracts",
-    component: Overview
+    url: "/extending-contracts"
   },
   {
     name: "Access Control",
-    url: "/access-control",
-    component: Overview
+    url: "/access-control"
   },
   {
     name: "Tokens",
     url: "/tokens",
-    component: Overview,
     options: [
       {
         name: "NFT (ERC721)",
-        url: "/tokens/nft",
-        component: Overview
+        url: "/tokens/nft"
       },
       {
         name: "Fungible Token (ERC20)",
-        url: "/tokens/ft",
-        component: Overview
+        url: "/tokens/ft"
       },
     ],
   },

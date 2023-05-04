@@ -4,16 +4,13 @@
 	import "@emerald-dao/design-system/build/variables-light.css";
 	import "@emerald-dao/design-system/build/variables.css";
 	import "@emerald-dao/component-library/styles/app.scss";
-
+	import "$lib/styles/_articles.scss";
 	import { theme } from "$stores/ThemeStore";
 	import { Header, Footer } from "@emerald-dao/component-library";
-	import Nav from "$lib/sections/Nav.svelte";
-	import NavSidebar from "$lib/components/NavSidebar.svelte";
 	import { page } from "$app/stores";
-	import BackOrForward from "$lib/components/BackOrForward.svelte";
 	import { pageElements } from "$lib/nav";
 
-	let largeScreenNav = [
+	let navElements = [
 		{
 			name: "GitHub",
 			url: "/docs",
@@ -30,41 +27,40 @@
 			prefetch: true,
 		},
 	];
-
-	let x = 0;
-
-	$: navElements = x >= 1000 ? largeScreenNav : pageElements;
-	$: currentPageIndex = pageElements.findIndex(
-		(ele) => ele.url === $page.url.pathname
-	);
-	$: previousComponent =
-		currentPageIndex > 0 ? pageElements[currentPageIndex - 1] : null;
-	$: nextComponent =
-		currentPageIndex < pageElements.length - 1
-			? pageElements[currentPageIndex + 1]
-			: null;
 </script>
 
-<svelte:window bind:innerWidth={x} />
+<Header
+	themeStore={theme}
+	{navElements}
+	logoHref={"/"}
+	logoUrl="/ec_logo.png"
+	logoText="Emerald OZ"
+/>
 
 <main>
-	<Nav />
-	<div class="main-app">
-		<Header
-			themeStore={theme}
-			{navElements}
-			logoHref={"/"}
-			logoUrl="/ec_logo.png"
-			logoText="Emerald City"
-		/>
-		<div class="main-section">
-			<div>
-				<svelte:component this={pageElements[currentPageIndex].component} />
-				<!-- back or forward -->
-				<BackOrForward {previousComponent} {nextComponent} />
-			</div>
-			<NavSidebar />
+	<div class="container-large">
+		<div class="sidebar">
+			<a class="header-link" href="/">Home</a>
+			{#each pageElements as pageElement, index}
+				<div class="column-3">
+					<p class="chapter small">
+						{`${index + 1}. ${pageElement.name}`}
+					</p>
+					{#if pageElement.options}
+						{#each pageElement.options as option, i}
+							<a
+								href={`/${pageElement.name}/${option.name}`}
+								class="header-link"
+								class:active={option.url === $page.url.pathname}
+							>
+								{`${index + 1}.${i + 1} ${option.name}`}
+							</a>
+						{/each}
+					{/if}
+				</div>
+			{/each}
 		</div>
+		<slot />
 	</div>
 </main>
 
@@ -72,34 +68,78 @@
 	{navElements}
 	logoHref={"/"}
 	logoUrl="/ec_logo.png"
-	logoText="Emerald City"
+	logoText="Emerald OZ"
 />
 
 <style type="scss">
-	main {
+	.container-large {
 		display: flex;
-		flex-direction: row;
-		min-width: 0;
+		flex-direction: column;
+		gap: var(--space-5);
+		padding-block: 0;
 
-		.main-app {
-			width: calc(100vw - 300px);
+		@include mq(medium) {
+			display: grid;
+			grid-template-columns: 1fr 4fr;
+			gap: var(--space-16);
+		}
+	}
 
-			@media all and (max-width: 1000px) {
-				width: calc(100vw);
-			}
+	.sidebar {
+		display: none;
 
-			.main-section {
-				align-items: flex-start;
-				display: flex;
-				flex-direction: row;
-				flex-grow: 1;
-				margin: 0 var(--space-8);
-				max-width: 60rem;
+		@include mq(medium) {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			border-right: 0.5px var(--clr-border-primary) solid;
+			border-bottom: none;
+			padding-right: var(--space-12);
+			gap: var(--space-11);
+			overflow-y: auto;
+			position: sticky;
+			top: 0;
+			height: 100vh;
+			padding-block: var(--space-8);
+			// background-color: var(--clr-background-secondary);
+		}
 
-				@media all and (max-width: 1000px) {
-					max-width: none;
-				}
+		.header-link {
+			line-height: 1.4;
+			font-size: 0.83rem;
+			color: var(--clr-text-off);
+
+			&.active {
+				color: var(--clr-heading-main);
 			}
 		}
+	}
+
+	.accordion {
+		border-bottom: var(--border-width-primary) var(--clr-border-primary) solid;
+		padding-block: var(--space-8);
+
+		@include mq(medium) {
+			display: none;
+		}
+	}
+
+	.chapter {
+		color: var(--clr-text-main);
+		border-bottom: 1px var(--clr-neutral-badge) solid;
+		padding-bottom: var(--space-2);
+		font-family: var(--font-heading);
+		font-size: 0.9rem;
+	}
+
+	::-webkit-scrollbar {
+		width: 7px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--clr-neutral-badge);
+		border-radius: 3px;
+		transition: 1.7s;
+		cursor: pointer;
 	}
 </style>
