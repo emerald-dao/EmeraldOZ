@@ -3,7 +3,7 @@ import type { Page } from "./types/page.interface";
 export const pageElements: Page[] = [
   {
     name: "Overview",
-    url: "/"
+    url: "/overview"
   },
   {
     name: "Wizard",
