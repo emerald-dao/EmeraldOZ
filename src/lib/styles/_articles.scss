@@ -19,10 +19,14 @@ article {
 		margin: 0.5em 0;
 	}
 
+	h1 {
+		margin-bottom: .1em;
+	}
+
 	h2,
 	h3,
 	h4 {
-		margin-top: 1.6em;
+		margin-top: 1.4em;
 	}
 
 	h5 {
@@ -76,5 +80,9 @@ article {
 
 	img {
 		margin-block: var(--space-4) var(--space-8);
+	}
+
+	a {
+		text-decoration: none;
 	}
 }

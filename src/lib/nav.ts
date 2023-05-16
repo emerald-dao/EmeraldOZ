@@ -6,16 +6,12 @@ export const pageElements: Page[] = [
     url: "/overview"
   },
   {
-    name: "Wizard",
-    url: "/wizard"
-  },
-  {
-    name: "Extending Contracts",
-    url: "/extending-contracts"
-  },
-  {
     name: "Access Control",
     url: "/access-control"
+  },
+  {
+    name: "Access Modifiers",
+    url: "/access-modifiers",
   },
   {
     name: "Tokens",

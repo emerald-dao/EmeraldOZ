@@ -1,12 +1,14 @@
 <script type="ts">
 	import { transformHeadingToUrl } from "$lib/utilities/dataTransformation/transformHeadingToUrl";
-	import { onMount, tick } from "svelte";
+	import { getContext, onMount, tick } from "svelte";
 	import { ProgressSteps } from "@emerald-dao/component-library";
 	import type { ProgressStates } from "@emerald-dao/component-library/components/ProgressStep/progress-states.type";
 	import { page } from "$app/stores";
 	import EditContent from "../atoms/EditContent.svelte";
+	import Icon from "@iconify/svelte";
 
 	export let headings: Heading[];
+	console.log(headings);
 
 	interface Heading {
 		level: number;
@@ -77,6 +79,8 @@
 		trackScroll();
 		tranformHeadingsToSteps();
 	});
+
+	const metadata = getContext("metadata-context");
 </script>
 
 <svelte:window on:scroll={trackScroll} />
@@ -114,6 +118,14 @@
 		/>
 	</div>
 	<div class="column-6 bottom-links-wrapper">
+		{#if metadata.lessonVideoUrl}
+			<div class="column-3">
+				<a href="#" class={`header-link row-2 align-center`}>
+					<Icon icon="bi:camera-video" />
+					<p class="w-small">Video lesson</p>
+				</a>
+			</div>
+		{/if}
 		<EditContent
 			href={`https://github.com/emerald-dao/EmeraldOZ/tree/main/src/lib/content/${$page.params.name}.md`}
 			target="_blank"

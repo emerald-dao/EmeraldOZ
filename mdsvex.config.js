@@ -9,8 +9,7 @@ const config = defineConfig({
 		dashes: 'oldschool'
 	},
 	layout: {
-		_: 'src/lib/components/mdsvex/CourseLayout.svelte',
-		examples: 'src/lib/components/mdsvex/ExamplesLayout.svelte'
+		_: 'src/lib/components/mdsvex/CourseLayout.svelte'
 	},
 	rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
 	remarkPlugins: [getHeadings],

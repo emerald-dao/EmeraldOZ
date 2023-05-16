@@ -12,20 +12,20 @@ quizUrl: https://forms.gle/dCaMDJWoko54xkiv5
 
 # Overview
 
-A library for secure smart contract development. Build on a solid foundation of community-vetted code.
+Welcome to Emerald OZ, the <a href="https://docs.openzeppelin.com/contracts" target="_blank">Open-Zeppelin</a> for the <a href="https://flow.com" target="_blank">Flow blockchain</a> created by <a href="https://ecdao.org" target="_blank">Emerald City</a>.
 
-- Implementations of standards like ERC20 and ERC721.
-- Implementations of standards like ERC20 and ERC721.
-- Implementations of standards like ERC20 and ERC721.
+<Tip>
+  If you're new to smart contract development, or new to Cadence in general, head to the <a href="https://academy.ecdao.org/en/catalog/courses/beginner-cadence" target="_blank">Beginner Cadence Course</a> created by Emerald City.
+</Tip>
 
-## Stuff
+## Security
 
-<Tip />
+Please report any security issues or mistakes you find via the Shield channel in the <a href="https://discord.gg/emeraldcity" target="_blank">Emerald City Discord</a>.
 
-### Installation
+## Learn More
 
-OpenZeppelin Contracts features a stable API, which means your contracts won’t break unexpectedly when upgrading to a newer minor version.
+The guides in the sidebar will teach about different concepts, and how to use the related contracts that Emerald OZ discusses:
 
-```bash
-npm run dev
-```
+- <a href="/access-control">Access Control</a>: decide who can perform each of the actions on your system.
+
+- <a href="/tokens">Tokens</a>: create tradable assets or collectibles, like the well known FungibleToken (ERC20) and NonFungibleToken (ERC721) standards.

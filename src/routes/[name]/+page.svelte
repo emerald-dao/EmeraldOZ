@@ -9,10 +9,8 @@
   $: findExampleIndex = pageElements.findIndex(
     (ele) => ele.url === $page.url.pathname
   );
-  console.log($page.url.pathname);
   $: previousExample = pageElements[findExampleIndex - 1];
   $: nextExample = pageElements[findExampleIndex + 1];
-  console.log(nextExample);
 
   $: setContext("metadata-context", data.metadata);
 </script>
@@ -51,6 +49,7 @@
 <style type="scss">
   section {
     padding-block: 0;
+    padding-bottom: 4em;
   }
   article {
     margin-top: var(--space-6);

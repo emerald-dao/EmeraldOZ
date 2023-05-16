@@ -16,17 +16,12 @@
 	let navElements = [
 		{
 			name: "GitHub",
-			url: "/docs",
-			prefetch: true,
-		},
-		{
-			name: "Forum",
-			url: "/docs",
+			url: "https://github.com/emerald-dao",
 			prefetch: true,
 		},
 		{
 			name: "Website",
-			url: "/docs",
+			url: "https://docs.ecdao.org",
 			prefetch: true,
 		},
 	];
@@ -134,7 +129,7 @@
 			position: sticky;
 			top: 0;
 			height: 100vh;
-			padding-block: var(--space-8);
+			padding-block: var(--space-15);
 			// background-color: var(--clr-background-secondary);
 		}
 
