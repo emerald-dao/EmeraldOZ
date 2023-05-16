@@ -1,11 +1,11 @@
 <script lang="ts" context="module">
-	import block from '$lib/components/codeblock/CodeBlock.svelte';
+	import block from "$lib/components/codeblock/CodeBlock.svelte";
 
 	export { block };
 </script>
 
 <script>
-	import TableOfContent from './TableOfContent.svelte';
+	import TableOfContent from "./TableOfContent.svelte";
 
 	export let headings;
 </script>
@@ -24,7 +24,7 @@
 		display: flex;
 		flex-direction: column;
 
-		@include mq(medium) {
+		@media all and (min-width: 1350px) {
 			display: grid;
 			grid-template-columns: 65ch auto;
 			gap: var(--space-18);
@@ -41,7 +41,7 @@
 	aside {
 		display: none;
 
-		@include mq(medium) {
+		@media all and (min-width: 1350px) {
 			display: block;
 			position: sticky;
 			top: 140px;

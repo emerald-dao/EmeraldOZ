@@ -95,13 +95,19 @@
 />
 
 <style type="scss">
+	main {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+	}
+
 	.container-large {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-5);
 		padding-block: 0;
 
-		@include mq(medium) {
+		@media all and (min-width: 1350px) {
 			display: grid;
 			grid-template-columns: 1fr 4fr;
 			gap: var(--space-16);
@@ -117,7 +123,7 @@
 	.sidebar {
 		display: none;
 
-		@include mq(medium) {
+		@media all and (min-width: 1350px) {
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
@@ -153,7 +159,7 @@
 		border-bottom: var(--border-width-primary) var(--clr-border-primary) solid;
 		padding-block: var(--space-8);
 
-		@include mq(medium) {
+		@media all and (min-width: 1350px) {
 			display: none;
 		}
 	}

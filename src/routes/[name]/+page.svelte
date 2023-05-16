@@ -61,7 +61,7 @@
     flex-direction: column;
     margin-top: var(--space-11);
 
-    @include mq(medium) {
+    @media all and (min-width: 1350px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-areas: "start end";
@@ -80,7 +80,7 @@
       grid-area: end;
       margin-top: var(--space-4);
 
-      @include mq(medium) {
+      @media all and (min-width: 1350px) {
         margin-top: 0;
       }
     }
