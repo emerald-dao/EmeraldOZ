@@ -15,7 +15,7 @@ quizUrl: https://forms.gle/dCaMDJWoko54xkiv5
 Welcome to Emerald OZ, the <a href="https://docs.openzeppelin.com/contracts" target="_blank">Open-Zeppelin</a> for the <a href="https://flow.com" target="_blank">Flow blockchain</a> created by <a href="https://ecdao.org" target="_blank">Emerald City</a>.
 
 <Tip>
-  If you're new to smart contract development, or new to Cadence in general, head to the <a href="https://academy.ecdao.org/en/catalog/courses/beginner-cadence" target="_blank">Beginner Cadence Course</a> created by Emerald City.
+  If you're new to smart contract development, or new to Cadence in general, head to the <a href="https://academy.ecdao.org/en/catalog/courses/beginner-cadence" target="_blank">Beginner Cadence Course</a> created by us.
 </Tip>
 
 ## Security
