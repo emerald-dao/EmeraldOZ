@@ -6,12 +6,16 @@ export const pageElements: Page[] = [
     url: "/overview"
   },
   {
+    name: "Account Model",
+    url: "/account-model"
+  },
+  {
     name: "Access Control",
     url: "/access-control"
   },
   {
-    name: "Access Modifiers",
-    url: "/access-modifiers",
+    name: "Admin Access",
+    url: "/admin-access",
   },
   {
     name: "Tokens",

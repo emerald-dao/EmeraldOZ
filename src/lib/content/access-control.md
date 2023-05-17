@@ -158,7 +158,7 @@ The issue with resource-based access control is once an account owns a resource,
 
 ## Capability-Based Access Control
 
-Cadence supports capabilities, which allow an owner of a resource to delegate certain permissions to public and private paths. You can think of capabilities as a key you obtain that unlock the underlying resource it points to.
+Cadence supports capabilities, which allow an owner of a resource to delegate certain permissions to public and private paths. You can think of capabilities as a key the owner of a resource creates that can be granted to others (publicly/privately) that unlock the underlying resource it points to.
 
 Using private capabilities, we can define a proxy resource that will allow an Owner to grant/revoke access to a resource.
 
@@ -178,7 +178,7 @@ Using private capabilities, we can define a proxy resource that will allow an Ow
 
 Here's a similar example from earlier; We define a 'Minter' resource, which allows the holder to create new tokens. 
 
-However this time, instead of creating an 'Owner' resource that creates new Minter resources, we just create 1 Minter resource that the owner stores, and a 'Proxy' resource that anyone can store. Then, the 'Minter' can create a private capability to their 'Minter' and deposit it to the 'Proxy' they want to give access to.
+However this time, instead of creating an 'Owner' resource that creates new Minter resources, we just create 1 Minter resource that the contract deployer account stores, and a 'Proxy' resource that anyone can store. Then, the holder of the 'Minter' can create a private capability to their 'Minter' and deposit it to the 'Proxy' they want to give access to.
 
 ```cadence
 import FungibleToken from 0x01
