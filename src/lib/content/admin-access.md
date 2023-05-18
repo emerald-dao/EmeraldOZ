@@ -87,3 +87,7 @@ pub contract EmeraldNFT {
 ```
 
 By putting the 'access(control)' modifier on the 'upgradeRarity' function inside the NFT resource, we restrict it to only being callable inside the contract. This allows us to define an 'Admin' resource that calls that function. No one else will be able to call it since it is not defined in the contract.
+
+<Notice type="con">
+  It is important to note that in order for the Admin to get a reference to the user's NFT, it must be made publicly available by the user. If the user were to decide to 'unlink' their Collection, the Admin <i>would not be able to upgrade the NFT or modify its data at all</i>.
+</Notice>
