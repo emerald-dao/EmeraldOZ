@@ -11,7 +11,7 @@ language: en
 
 We've discussed how you can make a fungible token using FungibleToken, but what if not all tokens are alike? This comes up in situations like real estate, voting rights, or collectibles, where some items are valued more than others, due to their usefulness, rarity, etc. NonFungibleToken is a standard for representing ownership of non-fungible tokens, that is, where each token is unique.
 
-<Notice type="tip">
+<Notice type="note">
   Cadence does not support inheritence. Unlike ERC721, we will not be inheriting functions & variables. Rather, NonFungibleToken lists a set of <i>requirements</i> we will implement ourselves.
 </Notice>
 

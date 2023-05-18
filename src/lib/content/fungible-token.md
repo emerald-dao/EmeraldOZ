@@ -11,7 +11,7 @@ language: en
 
 A FungibleToken contract keeps track of fungible tokens: any one token is exactly equal to any other token; no tokens have special rights or behavior associated with them. This makes FungibleTokens useful for things like a medium of exchange currency, voting rights, staking, and more.
 
-<Notice type="tip">
+<Notice type="note">
   Cadence does not support inheritence. Unlike ERC20, we will not be inheriting functions & variables. Rather, FungibleToken lists a set of <i>requirements</i> we will implement ourselves.
 </Notice>
 

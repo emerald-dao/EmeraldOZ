@@ -47,11 +47,11 @@
   }
 
   .note {
-    border-left-color: var(--clr-tertiary-main);
+    border-left-color: var(--clr-primary-main);
   }
 
   .note::before {
-    color: var(--clr-tertiary-main);
+    color: var(--clr-primary-main);
     content: "Note";
   }
 
