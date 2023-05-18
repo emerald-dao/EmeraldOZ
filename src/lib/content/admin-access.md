@@ -4,18 +4,16 @@ language: en
 ---
 
 <script>
-  import Tip from '$lib/components/atoms/Tip.svelte';
-  import ProCon from '$lib/components/atoms/ProCon.svelte';   
-  import LessonVideo from '$lib/components/atoms/LessonVideo.svelte';   
+  import Notice from '$lib/components/atoms/Notice.svelte'; 
 </script>
 
 # Admin Access
 
 While <a href="/access-control">Access Control</a> focuses primarily on *who* can take certain actions, there are many patterns around *what*-the code itself-can access certain actions.
 
-<Tip>
+<Notice type="tip">
   If you have not learned about Access Modifiers yet, head to the <a href="https://academy.ecdao.org/en/catalog/courses/beginner-cadence/chapter3/lesson5" target="_blank">Chapter on Access Control in the Beginner Cadence Course</a> created by us.
-</Tip>
+</Notice>
 
 ## Admin Access to User Data
 

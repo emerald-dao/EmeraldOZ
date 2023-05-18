@@ -4,9 +4,7 @@ language: en
 ---
 
 <script>
-  import Tip from '$lib/components/atoms/Tip.svelte';
-  import ProCon from '$lib/components/atoms/ProCon.svelte';   
-  import LessonVideo from '$lib/components/atoms/LessonVideo.svelte';   
+  import Notice from '$lib/components/atoms/Notice.svelte'; 
 </script>
 
 # Account Model

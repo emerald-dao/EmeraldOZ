@@ -22,12 +22,12 @@ export const pageElements: Page[] = [
     url: "/tokens",
     options: [
       {
-        name: "NFT (ERC721)",
-        url: "/tokens/nft"
+        name: "FungibleToken (ERC20)",
+        url: "/fungible-token"
       },
       {
-        name: "Fungible Token (ERC20)",
-        url: "/tokens/ft"
+        name: "NonFungibleToken (ERC721)",
+        url: "/non-fungible-token"
       },
     ],
   },

@@ -1,13 +1,19 @@
 <script type="ts">
-  export let pro = true;
+  export let type: "tip" | "note" | "pro" | "con" = "tip";
 </script>
 
-<div class="tip" class:pro>
+<div
+  class="notice"
+  class:tip={type === "tip"}
+  class:note={type === "note"}
+  class:pro={type === "pro"}
+  class:con={type === "con"}
+>
   <p><slot /></p>
 </div>
 
 <style type="scss">
-  .tip {
+  .notice {
     border: 1px solid var(--clr-border-primary);
     border-left-width: 15px;
     border-radius: var(--radius-1);
@@ -16,21 +22,46 @@
     max-width: 90vw;
     overflow-wrap: break-word;
     padding: 1rem 1.5rem;
-    border-left-color: var(--clr-alert-main);
     box-sizing: border-box;
     display: block;
     margin-top: 1em;
     margin-bottom: 2em;
   }
 
-  .tip::before {
+  .notice::before {
     color: var(--clr-alert-main);
-    content: "Con";
     display: block;
     font-size: 0.9em;
     margin-bottom: 0.5rem;
     text-align: left;
     text-transform: uppercase;
+  }
+
+  .tip {
+    border-left-color: var(--clr-tertiary-main);
+  }
+
+  .tip::before {
+    color: var(--clr-tertiary-main);
+    content: "Tip";
+  }
+
+  .note {
+    border-left-color: var(--clr-tertiary-main);
+  }
+
+  .note::before {
+    color: var(--clr-tertiary-main);
+    content: "Note";
+  }
+
+  .con {
+    border-left-color: var(--clr-alert-main);
+  }
+
+  .con::before {
+    color: var(--clr-alert-main);
+    content: "Con";
   }
 
   .pro {

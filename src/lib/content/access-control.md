@@ -4,8 +4,7 @@ language: en
 ---
 
 <script>
-  import Tip from '$lib/components/atoms/Tip.svelte';
-  import ProCon from '$lib/components/atoms/ProCon.svelte';   
+  import Notice from '$lib/components/atoms/Notice.svelte';
 </script>
 
 # Access Control
@@ -82,18 +81,18 @@ In essence, we will be defining multiple roles each represented as a resource an
 
 Most software uses access control systems that are role-based: some users are regular users, some may be supervisors or managers, and a few will often have administrative privileges.
 
-<ProCon>
+<Notice type="pro">
   <ol>
     <li>Very easy to implement.</li>
   </ol>
-</ProCon>
+</Notice>
 
-<ProCon pro={false}>
+<Notice type="con">
   <ol>
     <li>Have to coordinate a multi-signed transaction to grant roles.</li>
     <li>Cannot revoke access.</li>
   </ol>
-</ProCon>
+</Notice>
 
 Here's a simple example of using resource-based access control in a Fungible Token to define a 'minter' role, which allows the holder to create new tokens, and a 'burner' role, which allows the holder to burn tokens.
 
@@ -162,19 +161,19 @@ Cadence supports capabilities, which allow an owner of a resource to delegate ce
 
 Using private capabilities, we can define a proxy resource that will allow an Owner to grant/revoke access to a resource.
 
-<ProCon>
+<Notice type="pro">
   <ol>
     <li>Still uses the basic ideas of resource-based access control.</li>
     <li>Allows for easy granting/revoking of resources.</li>
   </ol>
-</ProCon>
+</Notice>
 
-<ProCon pro={false}>
+<Notice type="con">
   <ol>
     <li>Have to introduce a third "proxy" resource.</li>
     <li>User must still set up a "proxy" ahead of time.</li>
   </ol>
-</ProCon>
+</Notice>
 
 Here's a similar example from earlier; We define a 'Minter' resource, which allows the holder to create new tokens. 
 
