@@ -17,7 +17,7 @@ Fortunately, **access control is built directly into the Cadence language using 
 
 The most common and basic form of access control is the concept of ownership: there's an account that is the owner of a contract and can do administrative tasks on it. This approach is perfectly reasonable for contracts that have a single administrative user.
 
-You can achieve this by declaring an `Owner' (or any name) resource in your contract and deploying it to the contract's account upon deployment:
+You can achieve this by declaring an 'Owner' (or any name) resource in your contract and deploying it to the contract's account upon deployment:
 
 ```cadence
 pub contract MyContract {
@@ -157,14 +157,14 @@ The issue with resource-based access control is once an account owns a resource,
 
 ## Capability-Based Access Control
 
-Cadence supports capabilities, which allow an owner of a resource to delegate certain permissions to public and private paths. You can think of capabilities as a key the owner of a resource creates that can be granted to others (publicly/privately) that unlock the underlying resource it points to.
+Cadence supports capabilities, which allow an owner of a resource to delegate certain permissions to public and private paths. You can think of capabilities as a key the owner of a resource creates that can be granted to others (publicly/privately) that unlock the underlying resource it points to, often restricted by certain interfaces.
 
 Using private capabilities, we can define a proxy resource that will allow an Owner to grant/revoke access to a resource.
 
 <Notice type="pro">
   <ol>
     <li>Still uses the basic ideas of resource-based access control.</li>
-    <li>Allows for easy granting/revoking of resources.</li>
+    <li>Allows you to revoke access to resources.</li>
   </ol>
 </Notice>
 
