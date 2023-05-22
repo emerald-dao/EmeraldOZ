@@ -37,7 +37,7 @@
 	themeStore={theme}
 	{navElements}
 	logoHref={"/"}
-	logoUrl="/ec_logo.png"
+	logoUrl="/ec-logo.png"
 	logoText="Emerald OZ"
 />
 
@@ -90,7 +90,7 @@
 <Footer
 	{navElements}
 	logoHref={"/"}
-	logoUrl="/ec_logo.png"
+	logoUrl="/ec-logo.png"
 	logoText="Emerald OZ"
 />
 
