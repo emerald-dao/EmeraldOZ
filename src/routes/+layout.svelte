@@ -87,6 +87,10 @@
 	</div>
 </main>
 
+<svelte:head>
+	<title>Emerald OZ</title>
+</svelte:head>
+
 <Footer
 	{navElements}
 	logoHref={"/"}
